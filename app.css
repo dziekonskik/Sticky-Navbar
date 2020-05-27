@@ -1,0 +1,145 @@
+body {
+  background: #333;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, sans-serif;
+  line-height: 24px;
+  font-size: 1rem;
+}
+.hero {
+  text-align: center;
+  padding: 30px 0;
+  background: #222;
+}
+.hero img {
+  max-width: 500px;
+  width: 100%;
+}
+.navbar {
+  height: 60px;
+  background: #111;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+.navbar__menu {
+  margin: 0;
+}
+.navbar__item {
+  margin: 0;
+}
+.navbar__menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+.navbar__menu a {
+  display: block;
+  line-height: 60px;
+  padding: 0 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar__menu a:hover {
+  background: #333;
+}
+
+.content {
+  margin: 0 auto;
+  width: 75%;
+  max-width: 728px;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.hamburger {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: all 0.6s ease-in;
+  position: absolute;
+  top: 0;
+  right: 5%;
+  z-index: 7;
+}
+
+.hamburger-bar {
+  width: 40px;
+  height: 6px;
+  background-color: #ff7575;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(255, 117, 117, 0.3);
+  transition: all 0.6s ease-in-out;
+}
+
+.hamburger-bar::before,
+.hamburger-bar::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 6px;
+  background-color: #ff7575;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(255, 117, 117, 0.3);
+  transition: all 0.6s ease-in-out;
+}
+
+.hamburger-bar::before {
+  transform: translateY(-16px);
+}
+
+.hamburger-bar::after {
+  transform: translateY(16px);
+}
+
+.hamburger.open .hamburger-bar {
+  transform: translateX(-50px);
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.hamburger.open .hamburger-bar::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.hamburger.open .hamburger-bar::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.fadeIn {
+  animation: fadeIn 0.6s linear forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__menu ul {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
