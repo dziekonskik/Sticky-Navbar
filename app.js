@@ -22,13 +22,13 @@ window.addEventListener('scroll', () => {
 hamburgerMenu.addEventListener('click', () => {
   if (!menuOpen) {
     hamburgerMenu.classList.add('open');
+    ul.classList.add('open');
     ul.classList.add('fadeIn');
-    ul.style.display = 'flex';
     menuOpen = true;
   } else {
     hamburgerMenu.classList.remove('open');
     ul.classList.remove('fadeIn');
-    ul.style.display = 'none';
+    ul.classList.remove('open');
     menuOpen = false;
   }
 });

@@ -37,6 +37,11 @@ body {
   justify-content: center;
   transition: all 0.3s ease-in-out;
 }
+
+.navbar__menu ul.open {
+  display: flex;
+}
+
 .navbar__menu a {
   display: block;
   line-height: 60px;
@@ -97,7 +102,7 @@ body {
   background-color: #ff7575;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(255, 117, 117, 0.3);
-  transition: all 0.6s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .hamburger-bar::before {
@@ -123,7 +128,7 @@ body {
 }
 
 .fadeIn {
-  animation: fadeIn 0.6s linear forwards;
+  animation: fadeIn 0.3s linear forwards;
 }
 
 @keyframes fadeIn {
