@@ -5,30 +5,40 @@ const navOffsetTop = nav.offsetTop;
 const navOffsetHeight = nav.offsetHeight;
 let menuOpen = false;
 
+function classToggler() {
+  hamburgerMenu.classList.toggle('open');
+  ul.classList.toggle('open');
+  ul.classList.toggle('fadeIn');
+}
+
+function moveNavbar() {
+  document.body.style.paddingTop = `${navOffsetHeight}px`;
+  nav.style.position = 'fixed';
+  nav.style.top = 0;
+  nav.style.left = 0;
+  nav.style.right = 0;
+}
+
+function embedNavbar() {
+  document.body.style.paddingTop = 0;
+  nav.style.position = 'relative';
+  nav.offsetTop = navOffsetTop;
+}
+
 window.addEventListener('scroll', () => {
   if (window.scrollY >= navOffsetTop) {
-    document.body.style.paddingTop = `${navOffsetHeight}px`;
-    nav.style.position = 'fixed';
-    nav.style.top = 0;
-    nav.style.left = 0;
-    nav.style.right = 0;
+    moveNavbar();
   } else {
-    document.body.style.paddingTop = 0;
-    nav.style.position = 'relative';
-    nav.offsetTop = navOffsetTop;
+    embedNavbar();
   }
 });
 
 hamburgerMenu.addEventListener('click', () => {
   if (!menuOpen) {
-    hamburgerMenu.classList.add('open');
-    ul.classList.add('open');
-    ul.classList.add('fadeIn');
+    classToggler();
     menuOpen = true;
   } else {
-    hamburgerMenu.classList.remove('open');
-    ul.classList.remove('fadeIn');
-    ul.classList.remove('open');
+    classToggler();
     menuOpen = false;
   }
 });
